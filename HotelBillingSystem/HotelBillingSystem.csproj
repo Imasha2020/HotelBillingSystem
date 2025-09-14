@@ -52,7 +52,13 @@
     <Compile Include="AddCustomerFormcs.Designer.cs">
       <DependentUpon>AddCustomerFormcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="AirportDecorator.cs" />
+    <Compile Include="BarDecorator.cs" />
+    <Compile Include="BaseDecorator.cs" />
     <Compile Include="BaseRoom.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerList.cs" />
+    <Compile Include="DiningDecorator.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,7 @@
     <Compile Include="ViewDailyCheckoutsForm.Designer.cs">
       <DependentUpon>ViewDailyCheckoutsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WellnessDecorator.cs" />
     <EmbeddedResource Include="AddCustomerFormcs.resx">
       <DependentUpon>AddCustomerFormcs.cs</DependentUpon>
     </EmbeddedResource>
