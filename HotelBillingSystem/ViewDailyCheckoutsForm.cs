@@ -15,6 +15,10 @@ namespace HotelBillingSystem
         public ViewDailyCheckoutsForm()
         {
             InitializeComponent();
+
+            var customers = CustomerList.GetAllCustomers();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = customers;
         }
 
         private void BackHomeBtn2_Click(object sender, EventArgs e)
@@ -26,9 +30,12 @@ namespace HotelBillingSystem
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var customers = CustomerList.GetAllCustomers();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = customers;
+           
+
+        }
+
+        private void ViewDailyCheckoutsForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

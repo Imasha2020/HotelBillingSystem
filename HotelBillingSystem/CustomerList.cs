@@ -19,5 +19,13 @@ namespace HotelBillingSystem
         {
             return customers;
         }
+
+        public static int GetNextCustomerNo()
+        {
+            if (customers.Count == 0)
+                return 1;
+            else
+                return customers.Max(c => int.Parse(c.No)) + 1;
+        }
     }
 }

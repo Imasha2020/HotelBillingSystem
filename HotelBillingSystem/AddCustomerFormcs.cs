@@ -68,7 +68,11 @@ namespace HotelBillingSystem
             double totalCost = room.GetCost();
 
             //5.Save Customer
+
+            int nextNo = CustomerList.GetNextCustomerNo();
+
             Customer customer = new Customer { 
+                No = nextNo.ToString(),
                 Name = name ,
                 checkInDate = checkInDate,
                 roomType = roomType,
