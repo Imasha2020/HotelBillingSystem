@@ -37,10 +37,13 @@ namespace HotelBillingSystem
             else if (DeluxeRadio.Checked)
                 roomType = "deluxe";
 
-            double barCharges = double.Parse(BarChargeTxtBox.Text);
-            double resturantCharges = double.Parse(ResturantChargesTxtBox.Text);
-            double wellnessCharges = double.Parse(WellnessChargesTxtBox.Text);
-            double airportPickupCharges = double.Parse(AirPortChargesTxtBox.Text);
+            double barCharges = 0, resturantCharges = 0, wellnessCharges = 0, airportPickupCharges = 0;
+
+            double.TryParse(BarChargeTxtBox.Text, out barCharges);
+            double.TryParse(ResturantChargesTxtBox.Text, out resturantCharges);
+            double.TryParse(WellnessChargesTxtBox.Text, out wellnessCharges);
+            double.TryParse(AirPortChargesTxtBox.Text, out airportPickupCharges);
+
 
             DateTime checkInDate = CheckInDate.Value;
             DateTime checkOutDate = DateTime.Now;
@@ -62,8 +65,23 @@ namespace HotelBillingSystem
                 room = new AirportDecorator(room, airportPickupCharges);
 
             //4.Total Cost
-
             double totalCost = room.GetCost();
+
+            //5.Save Customer
+            Customer customer = new Customer { 
+                Name = name ,
+                checkInDate = checkInDate,
+                roomType = roomType,
+                barCharge = barCharges,
+                diningCharge = resturantCharges,
+                wellnessCharge = wellnessCharges,
+                airportCharge = airportPickupCharges,
+                totalBill = totalCost
+            };
+
+            CustomerList.AddCustomer(customer);
+
+            MessageBox.Show("Customer Added Successfully!");
         }
     }
 }
