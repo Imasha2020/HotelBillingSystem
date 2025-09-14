@@ -35,15 +35,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CustomerNameTxtBox = new System.Windows.Forms.TextBox();
-            this.StandardChck = new System.Windows.Forms.CheckBox();
-            this.DoubleChk = new System.Windows.Forms.CheckBox();
-            this.DeluxeChk = new System.Windows.Forms.CheckBox();
             this.BarChargeTxtBox = new System.Windows.Forms.TextBox();
             this.ResturantChargesTxtBox = new System.Windows.Forms.TextBox();
             this.WellnessChargesTxtBox = new System.Windows.Forms.TextBox();
             this.AirPortChargesTxtBox = new System.Windows.Forms.TextBox();
             this.AddCustomBtn = new System.Windows.Forms.Button();
             this.BackHomeBtn1 = new System.Windows.Forms.Button();
+            this.standardRadio = new System.Windows.Forms.RadioButton();
+            this.doubleRadio = new System.Windows.Forms.RadioButton();
+            this.DeluxeRadio = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CheckInDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -107,36 +109,6 @@
             this.CustomerNameTxtBox.Size = new System.Drawing.Size(345, 22);
             this.CustomerNameTxtBox.TabIndex = 6;
             // 
-            // StandardChck
-            // 
-            this.StandardChck.AutoSize = true;
-            this.StandardChck.Location = new System.Drawing.Point(240, 92);
-            this.StandardChck.Name = "StandardChck";
-            this.StandardChck.Size = new System.Drawing.Size(84, 20);
-            this.StandardChck.TabIndex = 7;
-            this.StandardChck.Text = "Standard";
-            this.StandardChck.UseVisualStyleBackColor = true;
-            // 
-            // DoubleChk
-            // 
-            this.DoubleChk.AutoSize = true;
-            this.DoubleChk.Location = new System.Drawing.Point(368, 91);
-            this.DoubleChk.Name = "DoubleChk";
-            this.DoubleChk.Size = new System.Drawing.Size(73, 20);
-            this.DoubleChk.TabIndex = 8;
-            this.DoubleChk.Text = "Double";
-            this.DoubleChk.UseVisualStyleBackColor = true;
-            // 
-            // DeluxeChk
-            // 
-            this.DeluxeChk.AutoSize = true;
-            this.DeluxeChk.Location = new System.Drawing.Point(486, 91);
-            this.DeluxeChk.Name = "DeluxeChk";
-            this.DeluxeChk.Size = new System.Drawing.Size(71, 20);
-            this.DeluxeChk.TabIndex = 9;
-            this.DeluxeChk.Text = "Deluxe";
-            this.DeluxeChk.UseVisualStyleBackColor = true;
-            // 
             // BarChargeTxtBox
             // 
             this.BarChargeTxtBox.Location = new System.Drawing.Point(240, 135);
@@ -167,16 +139,17 @@
             // 
             // AddCustomBtn
             // 
-            this.AddCustomBtn.Location = new System.Drawing.Point(73, 356);
+            this.AddCustomBtn.Location = new System.Drawing.Point(50, 403);
             this.AddCustomBtn.Name = "AddCustomBtn";
             this.AddCustomBtn.Size = new System.Drawing.Size(166, 23);
             this.AddCustomBtn.TabIndex = 14;
             this.AddCustomBtn.Text = "ADD CUSTOMER";
             this.AddCustomBtn.UseVisualStyleBackColor = true;
+            this.AddCustomBtn.Click += new System.EventHandler(this.AddCustomBtn_Click);
             // 
             // BackHomeBtn1
             // 
-            this.BackHomeBtn1.Location = new System.Drawing.Point(368, 356);
+            this.BackHomeBtn1.Location = new System.Drawing.Point(368, 403);
             this.BackHomeBtn1.Name = "BackHomeBtn1";
             this.BackHomeBtn1.Size = new System.Drawing.Size(166, 23);
             this.BackHomeBtn1.TabIndex = 15;
@@ -184,20 +157,71 @@
             this.BackHomeBtn1.UseVisualStyleBackColor = true;
             this.BackHomeBtn1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // standardRadio
+            // 
+            this.standardRadio.AutoSize = true;
+            this.standardRadio.Location = new System.Drawing.Point(240, 92);
+            this.standardRadio.Name = "standardRadio";
+            this.standardRadio.Size = new System.Drawing.Size(83, 20);
+            this.standardRadio.TabIndex = 16;
+            this.standardRadio.TabStop = true;
+            this.standardRadio.Text = "Standard";
+            this.standardRadio.UseVisualStyleBackColor = true;
+            // 
+            // doubleRadio
+            // 
+            this.doubleRadio.AutoSize = true;
+            this.doubleRadio.Location = new System.Drawing.Point(352, 92);
+            this.doubleRadio.Name = "doubleRadio";
+            this.doubleRadio.Size = new System.Drawing.Size(72, 20);
+            this.doubleRadio.TabIndex = 17;
+            this.doubleRadio.TabStop = true;
+            this.doubleRadio.Text = "Double";
+            this.doubleRadio.UseVisualStyleBackColor = true;
+            // 
+            // DeluxeRadio
+            // 
+            this.DeluxeRadio.AutoSize = true;
+            this.DeluxeRadio.Location = new System.Drawing.Point(464, 92);
+            this.DeluxeRadio.Name = "DeluxeRadio";
+            this.DeluxeRadio.Size = new System.Drawing.Size(70, 20);
+            this.DeluxeRadio.TabIndex = 18;
+            this.DeluxeRadio.TabStop = true;
+            this.DeluxeRadio.Text = "Deluxe";
+            this.DeluxeRadio.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(47, 332);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Check-In Date";
+            // 
+            // CheckInDate
+            // 
+            this.CheckInDate.Location = new System.Drawing.Point(252, 326);
+            this.CheckInDate.Name = "CheckInDate";
+            this.CheckInDate.Size = new System.Drawing.Size(239, 22);
+            this.CheckInDate.TabIndex = 20;
+            // 
             // AddCustomerFormcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 539);
+            this.Controls.Add(this.CheckInDate);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.DeluxeRadio);
+            this.Controls.Add(this.doubleRadio);
+            this.Controls.Add(this.standardRadio);
             this.Controls.Add(this.BackHomeBtn1);
             this.Controls.Add(this.AddCustomBtn);
             this.Controls.Add(this.AirPortChargesTxtBox);
             this.Controls.Add(this.WellnessChargesTxtBox);
             this.Controls.Add(this.ResturantChargesTxtBox);
             this.Controls.Add(this.BarChargeTxtBox);
-            this.Controls.Add(this.DeluxeChk);
-            this.Controls.Add(this.DoubleChk);
-            this.Controls.Add(this.StandardChck);
             this.Controls.Add(this.CustomerNameTxtBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -221,14 +245,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox CustomerNameTxtBox;
-        private System.Windows.Forms.CheckBox StandardChck;
-        private System.Windows.Forms.CheckBox DoubleChk;
-        private System.Windows.Forms.CheckBox DeluxeChk;
         private System.Windows.Forms.TextBox BarChargeTxtBox;
         private System.Windows.Forms.TextBox ResturantChargesTxtBox;
         private System.Windows.Forms.TextBox WellnessChargesTxtBox;
         private System.Windows.Forms.TextBox AirPortChargesTxtBox;
         private System.Windows.Forms.Button AddCustomBtn;
         private System.Windows.Forms.Button BackHomeBtn1;
+        private System.Windows.Forms.RadioButton standardRadio;
+        private System.Windows.Forms.RadioButton doubleRadio;
+        private System.Windows.Forms.RadioButton DeluxeRadio;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker CheckInDate;
     }
 }
