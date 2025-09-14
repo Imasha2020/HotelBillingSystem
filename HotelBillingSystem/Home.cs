@@ -21,5 +21,19 @@ namespace HotelBillingSystem
         {
 
         }
+
+        private void buttonAddCustom_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddCustomerFormcs addCustom = new AddCustomerFormcs();
+            addCustom.Show();
+        }
+
+        private void buttonViewCheckouts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewDailyCheckoutsForm viewdCheckouts = new ViewDailyCheckoutsForm();
+            viewdCheckouts.Show();
+        }
     }
 }
