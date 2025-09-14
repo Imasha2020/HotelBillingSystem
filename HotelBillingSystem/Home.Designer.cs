@@ -28,12 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.buttonAddCustom = new System.Windows.Forms.Button();
+            this.buttonViewCheckouts = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // buttonAddCustom
+            // 
+            this.buttonAddCustom.Location = new System.Drawing.Point(119, 26);
+            this.buttonAddCustom.Name = "buttonAddCustom";
+            this.buttonAddCustom.Size = new System.Drawing.Size(239, 45);
+            this.buttonAddCustom.TabIndex = 0;
+            this.buttonAddCustom.Text = "ADD CUSTOMERS";
+            this.buttonAddCustom.UseVisualStyleBackColor = true;
+            this.buttonAddCustom.Click += new System.EventHandler(this.buttonAddCustom_Click);
+            // 
+            // buttonViewCheckouts
+            // 
+            this.buttonViewCheckouts.Location = new System.Drawing.Point(119, 77);
+            this.buttonViewCheckouts.Name = "buttonViewCheckouts";
+            this.buttonViewCheckouts.Size = new System.Drawing.Size(239, 45);
+            this.buttonViewCheckouts.TabIndex = 1;
+            this.buttonViewCheckouts.Text = "VIEW DAILY CHECKOUTS";
+            this.buttonViewCheckouts.UseVisualStyleBackColor = true;
+            this.buttonViewCheckouts.Click += new System.EventHandler(this.buttonViewCheckouts_Click);
+            // 
+            // Home
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.BackgroundImage = global::HotelBillingSystem.Properties.Resources.HotelRoom1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(528, 553);
+            this.Controls.Add(this.buttonViewCheckouts);
+            this.Controls.Add(this.buttonAddCustom);
+            this.Name = "Home";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonAddCustom;
+        private System.Windows.Forms.Button buttonViewCheckouts;
     }
 }
