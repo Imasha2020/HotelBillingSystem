@@ -47,8 +47,23 @@ namespace HotelBillingSystem
 
             int stayedDays = (checkOutDate - checkInDate).Days + 1;
 
+            //2.Base room Cost
+            IRoom room = new BaseRoom(roomType, stayedDays);
+            double baseRoomCost = room.GetCost();
 
+            //3.Apply Decorators
+            if (barCharges > 0)
+                room = new BarDecorator(room, barCharges);
+            if (resturantCharges > 0)
+                room = new DiningDecorator(room, resturantCharges);
+            if (wellnessCharges > 0)
+                room = new WellnessDecorator(room, wellnessCharges);
+            if (airportPickupCharges > 0)
+                room = new AirportDecorator(room, airportPickupCharges);
 
+            //4.Total Cost
+
+            double totalCost = room.GetCost();
         }
     }
 }
