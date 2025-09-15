@@ -25,7 +25,7 @@ namespace HotelBillingSystem
             if (customers.Count == 0)
                 return 1;
             else
-                return customers.Max(c => int.Parse(c.No)) + 1;
+                return customers.Count + 1;
         }
     }
 }

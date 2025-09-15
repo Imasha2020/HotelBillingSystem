@@ -37,18 +37,24 @@ namespace HotelBillingSystem
             else if (DeluxeRadio.Checked)
                 roomType = "deluxe";
 
-            double barCharges = 0, resturantCharges = 0, wellnessCharges = 0, airportPickupCharges = 0;
+            //double barCharges = 0, resturantCharges = 0, wellnessCharges = 0, airportPickupCharges = 0;
 
-            double.TryParse(BarChargeTxtBox.Text, out barCharges);
-            double.TryParse(ResturantChargesTxtBox.Text, out resturantCharges);
-            double.TryParse(WellnessChargesTxtBox.Text, out wellnessCharges);
-            double.TryParse(AirPortChargesTxtBox.Text, out airportPickupCharges);
+            //double.TryParse(BarChargeTxtBox.Text, out barCharges);
+            //double.TryParse(ResturantChargesTxtBox.Text, out resturantCharges);
+            //double.TryParse(WellnessChargesTxtBox.Text, out wellnessCharges);
+            //double.TryParse(AirPortChargesTxtBox.Text, out airportPickupCharges);
+
+            double barCharges = double.Parse(BarChargeTxtBox.Text);
+            double resturantCharges = double.Parse(ResturantChargesTxtBox.Text);
+            double wellnessCharges = double.Parse(WellnessChargesTxtBox.Text);
+            double airportPickupCharges = double.Parse(AirPortChargesTxtBox.Text);
 
 
             DateTime checkInDate = CheckInDate.Value;
             DateTime checkOutDate = DateTime.Now;
 
             int stayedDays = (checkOutDate - checkInDate).Days + 1;
+
 
             //2.Base room Cost
             IRoom room = new BaseRoom(roomType, stayedDays);
